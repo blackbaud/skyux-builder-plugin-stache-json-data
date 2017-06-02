@@ -1,0 +1,29 @@
+{
+  "name": "@blackbaud/skyux-builder-plugin-stache-parse-json-file",
+  "version": "1.0.0",
+  "description": "A SKY UX Builder plugin for Stache Data service",
+  "main": "index.js",
+  "scripts": {
+    "coverage": "istanbul cover -x 'src/*.spec.js' --report=html jasmine JASMINE_CONFIG_PATH=jasmine.json",
+    "lint": "./node_modules/.bin/eslint src/**/*.js",
+    "test": "npm run lint && npm run coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackbaud/skyux-builder-plugin-stache-parse-json-file.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blackbaud/skyux-builder-plugin-stache-parse-json-file/issues"
+  },
+  "homepage": "https://github.com/blackbaud/skyux-builder-plugin-stache-parse-json-file#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "fs-extra": "^3.0.1",
+    "istanbul": "^0.4.5",
+    "jasmine": "^2.6.0",
+    "mock-fs": "^4.3.0"
+  }
+}
