@@ -17,8 +17,7 @@ function addTemplateReferenceVariable(content) {
   if (stacheTags.length) {
     stacheTags.each(function () {
       $(this)
-        .attr('stacheJsonData', '')
-        .attr('#stache', 'jsonData');
+        .attr('#stache', '');
     });
 
     content = $.html().toString();
