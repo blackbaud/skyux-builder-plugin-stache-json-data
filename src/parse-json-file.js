@@ -17,23 +17,22 @@ const preload = (content, resourcePath) => {
   }, {});
 
   let template = `
-    /* tslint:disable */
-    import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-    @Injectable()
-    export class StacheDataService {
+@Injectable()
+export class StacheDataService {
+  /* tslint:disable */
+  private data: any = ${JSON.stringify(dataObject)};
+  /* tslint:enable */
 
-      private data: any = ${JSON.stringify(dataObject)};
+  public getAllData(): any[] {
+    return this.data;
+  }
 
-      public getAllData() {
-        return this.data;
-      }
-
-      public getData(key: string) {
-        return this.data[key];
-      }
-    }
-
+  public getData(key: string): any {
+    return this.data[key];
+  }
+}
 `;
 
   content = template;
