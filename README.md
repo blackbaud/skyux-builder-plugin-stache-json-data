@@ -1,4 +1,4 @@
-# Stache Include
+# Stache Parse JSON File
 
 [![npm](https://img.shields.io/npm/v/@blackbaud/skyux-builder-plugin-stache-include.svg)](https://www.npmjs.com/package/@blackbaud/skyux-builder-plugin-stache-include)
 [![status](https://travis-ci.org/blackbaud/skyux-builder-plugin-stache-include.svg?branch=master)](https://travis-ci.org/blackbaud/skyux-builder-plugin-stache-include)

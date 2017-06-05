@@ -19,11 +19,11 @@
   },
   "homepage": "https://github.com/blackbaud/skyux-builder-plugin-stache-parse-json-file#readme",
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "fs-extra": "^3.0.1",
-    "istanbul": "^0.4.5",
-    "jasmine": "^2.6.0",
-    "mock-fs": "^4.3.0"
+    "eslint": "3.19.0",
+    "eslint-plugin-standard": "3.0.1",
+    "fs-extra": "3.0.1",
+    "istanbul": "0.4.5",
+    "jasmine": "2.6.0",
+    "mock-fs": "4.3.0"
   }
 }
