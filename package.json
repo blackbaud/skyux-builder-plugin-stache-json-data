@@ -4,6 +4,7 @@
   "description": "A SKY UX Builder plugin for Stache Data service",
   "main": "index.js",
   "scripts": {
+    "build": "node ./scripts/prepare-package.js",
     "coverage": "istanbul cover -x 'src/*.spec.js' --report=html jasmine JASMINE_CONFIG_PATH=jasmine.json",
     "lint": "./node_modules/.bin/eslint src/**/*.js",
     "test": "npm run lint && npm run coverage"
