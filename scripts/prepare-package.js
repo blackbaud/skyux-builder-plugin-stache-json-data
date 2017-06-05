@@ -13,7 +13,7 @@ function createDist() {
     fs.mkdirSync(distPath);
   }
 
-  fs.copySync(path.join(rootPath, 'src', 'parse-json-file.js'), path.join(distPath, 'index.js'));
+  fs.copySync(path.join(rootPath, 'src', 'json-data.js'), path.join(distPath, 'index.js'));
 }
 
 function makePackageFileForDist() {

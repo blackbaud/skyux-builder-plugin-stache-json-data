@@ -3,8 +3,8 @@ const path = require('path');
 const root = path.resolve(process.cwd(), 'src', 'stache', 'data');
 const cheerio = require('cheerio');
 
-// Adds directive and template reference variable to stache tag:
-// <stache #stache="jsonData" stacheJsonData></stache>
+// Adds template reference variable to stache tag:
+// <stache #stache></stache>
 function addTemplateReferenceVariable(content) {
   let $ = cheerio.load(content, {
     lowerCaseTags: false,
@@ -39,7 +39,12 @@ const preload = (content, resourcePath) => {
 
   let dataObject = files.reduce((acc, file) => {
     let fileContent = fs.readFileSync(path.join(root, file), 'utf8');
-    let fileName = file.split('.')[0];
+    let fileName = file.split('.')[0].toLowerCase()
+      .replace(/\s+/g, '-')        // Replace spaces with -
+      .replace(/[^\w\-]+/g, '')    // Remove all non-word chars
+      .replace(/\-\-+/g, '-')      // Replace multiple - with single -
+      .replace(/^-+/, '')          // Trim - from start of text
+      .replace(/-+$/, '');         // Trim - from end of text;
     acc[fileName] = JSON.parse(fileContent);
     return acc;
   }, {});
