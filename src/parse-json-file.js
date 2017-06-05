@@ -3,7 +3,7 @@ const path = require('path');
 const root = path.resolve(process.cwd(), 'src', 'stache', 'data');
 
 const preload = (content, resourcePath) => {
-  if (!resourcePath.match(/data\.service\.ts$/)) {
+  if (!resourcePath.match(/src\/modules\/shared\/data\.service\.ts$/)) {
     return content;
   }
 
