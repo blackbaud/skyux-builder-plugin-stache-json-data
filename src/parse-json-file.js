@@ -25,7 +25,7 @@ export class StacheDataService {
   private data: any = ${JSON.stringify(dataObject)};
   /* tslint:enable */
 
-  public getAllData(): any[] {
+  public getAllData(): any {
     return this.data;
   }
 
