@@ -31,25 +31,28 @@ const preload = (content, resourcePath) => {
     return addTemplateReferenceVariable(content);
   }
 
-  if (!resourcePath.match(/src\/modules\/json-data\/json-data\.service\.ts$/)) {
+  if (!resourcePath.match(/shared\/json-data\.service\.ts$/)) {
     return content;
   }
 
   let files = fs.readdirSync(root);
 
-  let dataObject = files.reduce((acc, file) => {
-    let fileContent = fs.readFileSync(path.join(root, file), 'utf8');
-    let fileName = file.split('.')[0].toLowerCase()
-      .replace(/\s+/g, '-')        // Replace spaces with -
-      .replace(/[^\w\-]+/g, '')    // Remove all non-word chars
-      .replace(/\-\-+/g, '-')      // Replace multiple - with single -
-      .replace(/^-+/, '')          // Trim - from start of text
-      .replace(/-+$/, '');         // Trim - from end of text;
-    acc[fileName] = JSON.parse(fileContent);
-    return acc;
-  }, {});
+  if (files.length > 0) {
 
-  content = content.replace(`'noop'`, JSON.stringify(dataObject));
+    let dataObject = files.reduce((acc, file) => {
+      let fileContent = fs.readFileSync(path.join(root, file), 'utf8');
+      let fileName = file.split('.')[0].toLowerCase()
+        .replace(/\s+/g, '-')        // Replace spaces with -
+        .replace(/[^\w\-]+/g, '')    // Remove all non-word chars
+        .replace(/\-\-+/g, '-')      // Replace multiple - with single -
+        .replace(/^-+/, '')          // Trim - from start of text
+        .replace(/-+$/, '');         // Trim - from end of text;
+      acc[fileName] = JSON.parse(fileContent);
+      return acc;
+    }, {});
+
+    content = content.replace(`'noop'`, JSON.stringify(dataObject));
+  }
 
   return content;
 };
