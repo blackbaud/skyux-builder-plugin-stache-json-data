@@ -1,3 +1,3 @@
-# 1.0.0 (2017-06-02)
+# 1.0.0 (2017-06-07)
 
-- Initial release
+- Initial release to NPM.
