@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/blackbaud/skyux-builder-plugin-stache-json-data#readme",
   "dependencies": {
-    "cheerio": "0.22.0",
-    "fs-extra": "3.0.1"
+    "fs-extra": "3.0.1",
+    "reserved-words": "0.1.1"
   },
   "devDependencies": {
     "eslint": "3.19.0",
