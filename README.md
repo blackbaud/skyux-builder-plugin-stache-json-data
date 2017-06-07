@@ -1,4 +1,4 @@
-# Stache Parse JSON File
+# Stache JSON Data Plugin
 
 [![npm](https://img.shields.io/npm/v/@blackbaud/skyux-builder-plugin-stache-json-data.svg)](https://www.npmjs.com/package/@blackbaud/skyux-builder-plugin-stache-json-data)
 [![status](https://travis-ci.org/blackbaud/skyux-builder-plugin-stache-json-data.svg?branch=master)](https://travis-ci.org/blackbaud/skyux-builder-plugin-stache-json-data)
