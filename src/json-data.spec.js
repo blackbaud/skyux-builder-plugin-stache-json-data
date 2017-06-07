@@ -10,7 +10,6 @@ describe('JSON Data Plugin', () => {
         'config.json': '{ "productNameLong": "Stache 2" }',
         'test file.json': '{ "test":"test" }'
       },
-      'foo.html': '<stache></stache>',
       'shared/json-data.service.ts': `private jsonData: any = 'noop';`
     });
   });
@@ -71,6 +70,7 @@ describe('JSON Data plugin no files.', () => {
   afterAll(() => {
     mock.restore();
   });
+
   it('should return the data service file unchanged if no json files exist.', () => {
     const content = `private jsonData: any = 'noop';`;
     const path = 'src/shared/json-data.service.ts';
