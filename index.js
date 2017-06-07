@@ -1,1 +1,1 @@
-module.exports = require('./src/parse-json-file');
+module.exports = require('./src/json-data');
