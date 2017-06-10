@@ -31,11 +31,16 @@ const preload = (content, resourcePath) => {
     return acc;
   }, { });
 
+  let moduleDirectory = '@blackbaud/stache';
+  if (resourcePath.match('/stache2/')) {
+    moduleDirectory = './public';
+  }
+
   return `
 import {
   STACHE_JSON_DATA_SERVICE_CONFIG_TOKEN,
   STACHE_JSON_DATA_PROVIDERS
-} from '@blackbaud/stache';
+} from '${moduleDirectory}';
 
 STACHE_JSON_DATA_PROVIDERS.push({
   provide: STACHE_JSON_DATA_SERVICE_CONFIG_TOKEN,
