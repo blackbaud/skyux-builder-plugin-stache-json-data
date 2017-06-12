@@ -36,18 +36,18 @@ const preload = (content, resourcePath) => {
     moduleDirectory = './public';
   }
 
-  return `
+  return `${content}
 import {
-  STACHE_JSON_DATA_SERVICE_CONFIG_TOKEN,
-  STACHE_JSON_DATA_PROVIDERS
+  StacheJsonDataService,
+  STACHE_JSON_DATA_SERVICE_CONFIG
 } from '${moduleDirectory}';
 
-STACHE_JSON_DATA_PROVIDERS.push({
-  provide: STACHE_JSON_DATA_SERVICE_CONFIG_TOKEN,
-  useValue: ${JSON.stringify(dataObject)}
-});
-
-${content}`;
+STACHE_EXTRAS_PROVIDERS.push(
+  { provide: STACHE_JSON_DATA_SERVICE_CONFIG, useValue: ${JSON.stringify(dataObject)} }
+);
+STACHE_EXTRAS_PROVIDERS.push(
+  { provide: StacheJsonDataService, useClass: StacheJsonDataService }
+);`;
 };
 
 const convertFileNameToObjectPropertyName = (fileName) => {
