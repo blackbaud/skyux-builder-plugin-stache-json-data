@@ -3,7 +3,7 @@ const path = require('path');
 const root = path.resolve(process.cwd(), 'src', 'stache', 'data');
 const reserved = require('reserved-words');
 
-const preload = (content, resourcePath, skyAppConfig) => {
+const preload = (content, resourcePath) => {
   if (!resourcePath.match(/app-extras\.module\.ts$/)) {
     return content;
   }
