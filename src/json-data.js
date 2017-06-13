@@ -3,8 +3,8 @@ const path = require('path');
 const root = path.resolve(process.cwd(), 'src', 'stache', 'data');
 const reserved = require('reserved-words');
 
-const preload = (content, resourcePath) => {
-  if (!resourcePath.match(/stache-extras\.module\.ts$/)) {
+const preload = (content, resourcePath, skyAppConfig) => {
+  if (!resourcePath.match(/app-extras\.module\.ts$/)) {
     return content;
   }
 
@@ -36,18 +36,23 @@ const preload = (content, resourcePath) => {
     moduleDirectory = './public';
   }
 
-  return `${content}
+  content = `
 import {
   StacheJsonDataService,
   STACHE_JSON_DATA_SERVICE_CONFIG
 } from '${moduleDirectory}';
 
-STACHE_EXTRAS_PROVIDERS.push(
-  { provide: STACHE_JSON_DATA_SERVICE_CONFIG, useValue: ${JSON.stringify(dataObject)} }
-);
-STACHE_EXTRAS_PROVIDERS.push(
+export const STACHE_JSON_DATA_PROVIDERS: any[] = [
+  { provide: STACHE_JSON_DATA_SERVICE_CONFIG, useValue: ${JSON.stringify(dataObject)} },
   { provide: StacheJsonDataService, useClass: StacheJsonDataService }
-);`;
+];
+
+${content}`;
+
+  content = content.replace('providers: [', `providers: [
+    STACHE_JSON_DATA_PROVIDERS,`);
+
+  return content;
 };
 
 const convertFileNameToObjectPropertyName = (fileName) => {
