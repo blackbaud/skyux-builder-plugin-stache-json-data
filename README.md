@@ -1,7 +1,9 @@
-# Stache JSON Data Plugin
+# Stache JSON Data Plugin (Deprecated)
 
 [![npm](https://img.shields.io/npm/v/@blackbaud/skyux-builder-plugin-stache-json-data.svg)](https://www.npmjs.com/package/@blackbaud/skyux-builder-plugin-stache-json-data)
 [![status](https://travis-ci.org/blackbaud/skyux-builder-plugin-stache-json-data.svg?branch=master)](https://travis-ci.org/blackbaud/skyux-builder-plugin-stache-json-data)
+
+### NOTE: This plugin has been deprecated in favor of an [all-inclusive plugin](https://github.com/blackbaud/skyux-builder-plugin-stache).
 
 This [SKY UX Builder](https://github.com/blackbaud/skyux-builder) plugin takes json files and adds them to a data service to be consumed by components. This plugin is intended to be used with [Stache 2 Components](https://github.com/blackbaud/stache2).
 
